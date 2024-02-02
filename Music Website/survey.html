@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Survey Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+  <header>
+    <div class="player">
+ 
+        <!-- Define the section for displaying details -->
+        <div class="details">
+          <div class="now-playing">PLAYING Audio</div>
+          <div class="track-art"></div>
+          <div class="track-name">Track Name</div>
+          <div class="track-artist">Track Artist</div>
+        </div>
+     
+        <!-- Define the section for displaying track buttons -->
+        <div class="buttons">
+          <div class="prev-track" onclick="prevTrack()">
+            <i class="fa fa-step-backward fa-2x"></i>
+          </div>
+          <div class="playpause-track" onclick="playpauseTrack()">
+            <i class="fa fa-play-circle fa-5x"></i>
+          </div>
+          <div class="next-track" onclick="nextTrack()">
+            <i class="fa fa-step-forward fa-2x"></i>
+          </div>
+        </div>
+     
+        <!-- Define the section for displaying the seek slider-->
+        <div class="slider_container">
+          <div class="current-time">00:00</div>
+          <input type="range" min="1" max="100"
+            value="0" class="seek_slider" onchange="seekTo()">
+          <div class="total-duration">00:00</div>
+        </div>
+     
+        <!-- Define the section for displaying the volume slider-->
+        <div class="slider_container">
+          <i class="fa fa-volume-down"></i>
+          <input type="range" min="1" max="100"
+            value="99" class="volume_slider" onchange="setVolume()">
+          <i class="fa fa-volume-up"></i>
+        </div>
+      </div>
+     
+      <!-- Load the main script for the player -->
+      <script src="main.js"></script>
+  <div id="title"><h1>Survey Form</h1>
+    </header>
+
+<form id="survey-form">
+
+  <div id="description"> Here is the Form, Please Fill</div><br>
+
+  <fieldset class="fieldset">
+
+    <div class="sub-group">
+      <label class="left" id="name-label" for="name">Name:</label>
+    <input type="text" name="customer-name" class="right input-field" id="name" placeholder="Enter your name" required>
+    </div>
+
+    <div class="sub-group">
+      <label class="left" id="email-label" for="email">Email:</label>
+    <input type="email" name="Email-address" class="right input-field" placeholder="Enter your email" id="email" required>
+    </div>
+
+    <div class="sub-group">
+      <label  class="left" id="number-label" for="number">Age:</label>
+    <input type="number" name="Age" placeholder="Age" min="1" max="100" class="right input-field" id="number">
+  </div>
+
+    <div class="sub-group">
+      <label class="left" id="handphone-label" for="handphone">Country:</label>
+
+    <input type="text" placeholder="Phone Number" class="right input-field" id="handphone">
+  </div>
+
+    <div class="sub-group">
+      <label class="left" for="dropdown">Select Joner Music:</label>
+
+      <select class="right dropdown" id="dropdown" name="dropdown">
+        <option selected disabled>Select an option</option>
+        <option value="first">Sadness</option>
+        <option value="never">Anger</option>
+        <option value="never">Happiness</option>
+        <option value="never">Fear</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset">
+<div class="sub-group">
+<label class="left">
+  *Which game you played?</label>
+
+ <ul style="list-style: none;" class="right">
+
+   <li class="checkbox"><label><input type="checkbox" name="game" value="exodus" >Exodus</label></li>
+     <li class="checkbox"><label><input type="checkbox" name="game" value="alcatraz">Alcatraz</label></li>
+     <li class="checkbox"><label><input type="checkbox" name="game" value="aokigahara" >Aokigahara<label></li>
+     <li class="checkbox"><label><input type="checkbox" name="game" value="mausoleum" >Mausoleum</label></li>
+     <li class="checkbox"><label><input type="checkbox" name="game" value="castiglione" >Castiglione</label></li>
+       </ul></div></fieldset>
+
+    <fieldset class="fieldset">
+  <div class="sub-group">
+  <label class="left" id="left-radio">Will you recommend the game to your friends?</label>
+
+   <ul style="list-style: none" class="right">
+       <li class="radio"><label><input name="radio-buttons" value="1" type="radio" class="recommendation">Yes</label></li>
+       <li class="radio"><label><input name="radio-buttons" value="2" type="radio" class="recommendation">Maybe</label></li>
+       <li class="radio"><label><input name="radio-buttons" value="3" type="radio" class="recommendation">No</label></li>
+   </ul>
+  </div></fieldset>
+
+     <fieldset class="fieldset">
+   <h2>Any comments or suggestions?</h2>
+
+    <div class="commentbox">
+
+   <textarea rows="4"  placeholder="Enter your comment here..."></textarea>
+
+   <br></br>
+
+  <button id="submit" type="submit">Submit</button>
+       </div></fieldset>
+</form>
+</div>
+  </body>
+</html>
